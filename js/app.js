@@ -115,7 +115,6 @@ T.get('statuses/user_timeline', { screen_name: Me.screenName, count: 9 }, (err, 
   tweetMessage.push(new TweetData(tweetText, tweetCreated, tweetName, tweetUser, tweetRetweet, tweetLikes));
     }// end of loop
   }});// end of get tweets and else
-
 // Build a constuctor function to handle the messages sent and recieved
 
   // This is the recieved messages contructor
