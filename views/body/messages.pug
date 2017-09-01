@@ -1,22 +1,38 @@
 .grid-33
-      .app--section
-        ul.app--message--list
-          if recievedMessage
-            each rmessage in recievedMessage
-              li
-                h3
-                  | Conversation with
-                  a  #{rmessage.sender.name}
-                ul.app--message--conversation
-                  li.app--message
-                    .app--avatar(style='background-image: url(images/f-spore.png)')
-                      img(src='images/f-spore.png')
-                    p.app--message--text= rmessage.text
-                    p.app--message--timestamp 3 hours ago
-                     if messages
-                       each message in messages
-                        li.app--message--me
-                          .app--avatar(style='background-image: url(images/m-spore.png)')
-                            img(src='images/m-spore.png')
-                          p.app--message--text
-                            | #{message.text}
+  .app--section
+    ul.app--message--list
+      if dmessages
+        li
+          h3
+            | Conversation with
+            a
+          ul.app--message--conversation
+            li.app--message
+              .app--avatar(style='background-image: url(' + dmessages[0].image + ')')
+              p.app--message--text= dmessages[0].time
+              p.app--message--timestamp= dmessages[0].time
+            li.app--message--me
+              .app--avatar(style='background-image: url(' + myInfo.image + ')')
+                img(src='images/m-spore.png')
+              p.app--message--text= message1[0].text
+              p.app--message--timestamp= message1[0].time
+            li.app--message
+              .app--avatar(style='background-image: url(' + dmessages[1].image + ')')
+                img(src='images/f-spore.png')
+              p.app--message--text= dmessages[1].text
+              p.app--message--timestamp= dmessages[1].time
+            li.app--message--me
+              .app--avatar(style='background-image: url(' + myInfo.image + ')')
+                img(src='images/m-spore.png')
+              p.app--message--text= message1[1].text
+              p.app--message--timestamp= message1[1].time
+            li.app--message
+              .app--avatar(style='background-image: url(' + dmessages[2].image + ')')
+                img(src='images/f-spore.png')
+              p.app--message--text= dmessages[2].text
+              p.app--message--timestamp= dmessages[2].time
+            li.app--message--me
+              .app--avatar(style='background-image: url(' + myInfo.image + ')')
+                img(src='images/m-spore.png')
+              p.app--message--text= message1[2].text
+              p.app--message--timestamp= message1[2].time

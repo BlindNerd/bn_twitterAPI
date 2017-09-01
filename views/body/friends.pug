@@ -1,14 +1,14 @@
 .grid-33
   .app--section
     ul.app--user--list
-      if friends
-        each friend in friends
+      if friendsInfo
+        each friend in friendsInfo
           li
             .circle--fluid
               .circle--fluid--cell.circle--fluid--primary
                 a.app--tweet--author
-                  .app--avatar(style='background-image: url(' + friend.profile_image_url + ')')
+                  .app--avatar(style='background-image: url(' + friend.friendImage + ')')
                   h4 #{friend.name}
-                  p @#{friend.screen_name}
+                  p @#{friend.screenName}
               .circle--fluid--cell
                 a.button.button-text Unfollow
